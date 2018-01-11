@@ -7,12 +7,10 @@ Created on Wed Jan 10 16:21:53 2018
 """
 import gzip
 import numpy as np
-import pickle
 import pandas as pd
 from string import punctuation
 from collections import Counter
 from sentimentrnn import SentimentRNN
-
 
 with gzip.open('movie_data.csv.gz') as f_in, open('movie_data.csv', 'wb') as f_out:
     f_out.writelines(f_in)
