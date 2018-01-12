@@ -28,9 +28,6 @@ word_to_int = {word: ii for ii, word in enumerate(word_counts, 1)}
 mapped_reviews = []
 for review in df['review']:
     mapped_reviews.append([word_to_int[word] for word in review.split()])
- 
-mapped_reviews = load_object('./mapped_reviews')
-
 sequence_length = 200  ## sequence length (or T in our formulas)
 sequences = np.zeros((len(mapped_reviews), sequence_length), dtype=int)
 for i, row in enumerate(mapped_reviews):
