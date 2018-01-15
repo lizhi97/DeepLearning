@@ -142,7 +142,7 @@ class SentimentRNN(object):
                 sess, tf.train.latest_checkpoint('model/'))
             test_state = sess.run(self.initial_state)
             for ii, batch_x in enumerate(
-                create_batch_generator(
+                self.__create_batch_generator(
                     X_data, None, batch_size=self.batch_size), 1):
                 feed = {'tf_x:0' : batch_x,
                         'tf_keepprob:0': 1.0,
