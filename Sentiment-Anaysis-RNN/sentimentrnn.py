@@ -158,4 +158,4 @@ class SentimentRNN(object):
                     
                 preds.append(pred)
                 
-        return np.concatenate(preds)
+        return preds
