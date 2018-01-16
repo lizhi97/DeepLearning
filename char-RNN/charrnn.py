@@ -187,7 +187,7 @@ class CharRNN(object):
                         ['probabilities:0', self.final_state], 
                         feed_dict=feed)
 
-            ch_id = self.get_top_char(proba, len(chars))
+            ch_id = self.__get_top_char(proba, len(chars))
             observed_seq.append(int2char[ch_id])
             
             ## 2: run the model using the updated observed_seq
