@@ -8,7 +8,7 @@ Created on Thu Jan 11 12:31:42 2018
 import tensorflow as tf
 import os
 import numpy as np
-from util import utils as ul
+from util.utils import ObjectTemp as ul
 
 class CharRNN(object):
     def __init__(self, num_classes, batch_size=64, 
@@ -173,10 +173,10 @@ class CharRNN(object):
                 sess, 
                 tf.train.latest_checkpoint(ckpt_dir))
             ## 1: run the model using the starter sequence
-            char2int = ul.restore('./char2int')
-            int2char = ul.restore('./int2char')
-            chars = ul.restore('./chars')
             new_state = sess.run(self.initial_state)
+            char2int = ul.restore("./char2int")
+            int2char = ul.restore("./int2char")
+            chars = ul.restore("./chars")
             for ch in starter_seq:
                 x = np.zeros((1, 1))
                 x[0,0] = char2int[ch]
