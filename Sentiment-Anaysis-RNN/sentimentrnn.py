@@ -6,7 +6,7 @@ Created on Wed Jan 10 21:41:31 2018
 @author: Joe
 """
 import tensorflow as tf
-
+import numpy as np
 class SentimentRNN(object):
     def __init__(self, n_words, seq_len=200,
                  lstm_size=256, num_layers=1, batch_size=64,
